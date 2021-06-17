@@ -1,17 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import { Provider } from "mobx-react"
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+
+import AuthenStore from './stores/AuthenStore';
+import BookStore from './stores/BookStore';
+import CartStore from './stores/CartStore';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider 
+      authenProv = {new AuthenStore(this)}
+      bookProv = {new BookStore(this)}
+      cartProv = {new CartStore(this)}
+    >
+      <App />
+    </Provider>,
+
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

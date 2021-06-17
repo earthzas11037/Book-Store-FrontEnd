@@ -1,0 +1,51 @@
+.card-container .hide-button{
+    display: none;
+}
+.card-container .hide-icon{
+    display: none;
+}
+
+.card-container{
+    width: 280px;
+    height: 450px;
+}
+
+.card-container:hover{
+    transform: scale(1.05);
+    /* margin-top: 500px; */
+    box-shadow:0px 0px 15px -5px;
+    cursor: pointer;
+    /* height: 500px;
+    position:absolute */
+}
+
+.card-container:hover .hide-button{
+    display: block;
+}
+
+.card-container:hover .hide-icon{
+    display: block;
+    position:absolute;
+    right: 0;
+    margin-right: 10px;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: #C0C0C0;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+.card-container-checkout{
+
+}
+
+.card-container-checkout:hover{
+    transform: scale(1.05);
+    box-shadow:0px 0px 10px -5px;
+    cursor: pointer;
+}
