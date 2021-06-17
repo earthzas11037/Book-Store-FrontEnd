@@ -115,6 +115,14 @@ function ShippingCart(props) {
         }
     }
 
+    const removeAll =  async() => {
+        const result = await props.cartProv.removeAllFromCart()
+        if(result){
+            props.cartProv.cart = []
+        }else{
+
+        }
+    }
 
     return(
         <Grid
@@ -267,6 +275,27 @@ function ShippingCart(props) {
                                 )
                             })
                         }
+                        <Grid
+                            container
+                            direction="row"
+                            justify="flex-start"
+                            alignItems="flex-start"
+                            spacing={3}
+                            style={{marginTop:30}}
+                        >
+                            <Grid item xs={12} md={3}>
+                                <NavLink to="/new" style={{ textDecoration: 'none' }}>
+                                    <Button variant="outlined" color="primary" disableElevation style={{width:"100%",fontSize:"1.2rem"}} >
+                                        ซื้อสินค้าต่อไป
+                                    </Button>
+                                </NavLink>
+                            </Grid>
+                            <Grid item xs={12} md={3}>
+                                <Button variant="contained" color="primary" disableElevation style={{width:"100%",fontSize:"1.2rem"}} onClick={e => removeAll()}>
+                                    ล้างตระกร้าสินค้า
+                                </Button>
+                            </Grid>
+                        </Grid>
                     </Grid>
 
                     <Grid item  xs={12} md={4} style={{marginTop:20}}>

@@ -95,6 +95,23 @@ export class CartStore {
             }
     }
 
+    async removeAllFromCart(){
+        try{
+            const res = await instanceAPI.delete(`cart/all`,  {
+                headers: {
+                  "Content-Type": "application/json",
+                  Authorization: cookie.load("token"),
+                },
+            });
+            if(res.data !== null){
+                // this.cart = res.data
+                return true
+            }
+        }catch(e) {
+            console.log(e);
+            return false;
+        }
+}
 }
 
 decorate(CartStore, {
